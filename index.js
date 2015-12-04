@@ -116,9 +116,7 @@ function Spec(runner) {
     console.log(indent() + color('fail', '  %d) %s'), ++n, test.title);
   });
 
-  runner.on('end', function() {
-    self.epilogue.bind(self);
-  });
+  runner.on('end', self.epilogue.bind(self));
 }
 
 /**
